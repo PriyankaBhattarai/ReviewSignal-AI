@@ -1,0 +1,90 @@
+{
+  "name": "ReviewSignal Mini Benchmark",
+  "version": "0.1.0",
+  "description": "Small illustrative dataset for verifying evaluation mechanics; not a representative industry benchmark.",
+  "category_vocabulary": [
+    "correctness",
+    "security",
+    "quality"
+  ],
+  "samples": [
+    {
+      "id": "case-001",
+      "title": "Use of eval on input",
+      "code": "def calculate(expression):\n    return eval(expression)\n",
+      "expected_categories": [
+        "security"
+      ],
+      "mock_detected_categories": [
+        "security"
+      ]
+    },
+    {
+      "id": "case-002",
+      "title": "Mutable default argument",
+      "code": "def add_item(item, items=[]):\n    items.append(item)\n    return items\n",
+      "expected_categories": [
+        "correctness"
+      ],
+      "mock_detected_categories": [
+        "correctness"
+      ]
+    },
+    {
+      "id": "case-003",
+      "title": "Unused variable",
+      "code": "def greet(name):\n    unused = 10\n    return f'Hello, {name}'\n",
+      "expected_categories": [
+        "quality"
+      ],
+      "mock_detected_categories": [
+        "quality"
+      ]
+    },
+    {
+      "id": "case-004",
+      "title": "Clean function",
+      "code": "def add(left: int, right: int) -> int:\n    return left + right\n",
+      "expected_categories": [],
+      "mock_detected_categories": []
+    },
+    {
+      "id": "case-005",
+      "title": "Hardcoded weak token",
+      "code": "API_TOKEN = 'example-hardcoded-token'\ndef request():\n    return API_TOKEN\n",
+      "expected_categories": [
+        "security"
+      ],
+      "mock_detected_categories": [
+        "security"
+      ]
+    },
+    {
+      "id": "case-006",
+      "title": "Unnecessary temporary variable",
+      "code": "def square(value):\n    result = value * value\n    return result\n",
+      "expected_categories": [
+        "quality"
+      ],
+      "mock_detected_categories": []
+    },
+    {
+      "id": "case-007",
+      "title": "Potential division by zero",
+      "code": "def average(total, count):\n    return total / count\n",
+      "expected_categories": [
+        "correctness"
+      ],
+      "mock_detected_categories": []
+    },
+    {
+      "id": "case-008",
+      "title": "Clean formatting",
+      "code": "def is_even(number):\n    return number % 2 == 0\n",
+      "expected_categories": [],
+      "mock_detected_categories": [
+        "quality"
+      ]
+    }
+  ]
+}

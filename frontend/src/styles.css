@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{font-family:'DM Sans',sans-serif;color:#e9edf5;background:#0a0d13;font-synthesis:none;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}body{margin:0;min-width:320px;background:radial-gradient(ellipse at 75% -10%,#182b3b 0,transparent 35%),#0a0d13}
+button,input{font:inherit}.shell{max-width:1240px;margin:auto;padding:0 30px 28px}
+.topbar{height:82px;display:flex;align-items:center;border-bottom:1px solid #202733;gap:12px}
+.brand-mark{height:38px;width:38px;border-radius:11px;display:grid;place-items:center;background:#a7f36c;color:#111a12;font-weight:800;font-family:Manrope}
+.brand-copy{display:flex;flex-direction:column;gap:3px}.brand-copy strong{font-family:Manrope;font-size:17px;letter-spacing:-.4px}.brand-copy strong span{color:#a7f36c}.brand-copy small,.eyebrow{font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;color:#7e8a9b}
+.top-pill{margin-left:auto;border:1px solid #303a45;border-radius:100px;padding:8px 12px;color:#aeb8c7;font-size:11px}.top-pill i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#a7f36c;margin-right:7px}
+.hero{padding:67px 0 47px;max-width:760px}.eyebrow{color:#a7f36c;margin:0 0 15px}.hero h1{font:800 clamp(40px,6vw,67px)/1.05 Manrope;margin:0;letter-spacing:-3px}.hero h1 em{font-style:normal;color:#a7f36c}.hero-copy{font-size:15px;line-height:1.8;color:#9aa6b7;max-width:650px;margin:23px 0}.hero-tags{display:flex;gap:8px;flex-wrap:wrap}.hero-tags span{font:11px 'DM Mono',monospace;color:#b8c2cf;background:#151b24;border:1px solid #27303b;padding:8px 10px;border-radius:6px}
+.layout{display:grid;grid-template-columns:340px 1fr;gap:18px;align-items:start}.panel{background:linear-gradient(145deg,#121821,#0f141c);border:1px solid #26303b;border-radius:13px;padding:22px;min-width:0}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.section-head .eyebrow{margin-bottom:8px}.section-head h2{font:700 20px Manrope;letter-spacing:-.5px;margin:0}.step-number{font:12px 'DM Mono',monospace;color:#637184;border:1px solid #303a47;border-radius:7px;padding:7px 9px}
+.muted{color:#8290a2;font-size:12px;line-height:1.7}.reviewer-list{display:grid;gap:8px;margin:24px 0}.reviewer-option{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid #2a3441;border-radius:9px;cursor:pointer;transition:.15s}.reviewer-option.selected{border-color:#729c53;background:#172019}.reviewer-option input{position:absolute;opacity:0;width:1px;height:1px}.checkmark{height:17px;width:17px;border:1px solid #4a5666;border-radius:5px;display:grid;place-items:center;font-size:12px;color:#10160e;flex-shrink:0}.selected .checkmark{background:#a7f36c;border-color:#a7f36c}.option-copy{display:flex;flex-direction:column;gap:4px}.option-copy strong{font-size:12px}.option-copy small{font-size:10px;color:#8491a2}.primary-button{width:100%;border:0;border-radius:8px;padding:13px 15px;background:#a7f36c;color:#10180e;font-weight:800;font-size:12px;cursor:pointer}.primary-button:disabled{opacity:.5;cursor:not-allowed}.footnote{font-size:10px;line-height:1.65;color:#687688;margin:12px 0}.dataset-box{display:flex;gap:10px;align-items:center;border-top:1px solid #28313d;padding-top:17px;margin-top:20px}.dataset-icon{height:34px;width:34px;display:grid;place-items:center;border-radius:8px;background:#202a34;color:#a7f36c}.dataset-box div:last-child{display:flex;flex-direction:column;gap:4px}.dataset-box strong{font-size:11px}.dataset-box small{font-size:10px;color:#7e8b9c}
+.results-panel{min-height:360px}.empty-state{min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#7f8b9b}.empty-symbol{font-size:45px;color:#a7f36c;margin-bottom:14px}.empty-state strong{font-size:13px;color:#cbd3de}.empty-state p{font-size:11px;max-width:250px;line-height:1.7}.result-meta{display:flex;gap:7px;flex-wrap:wrap;margin:19px 0}.result-meta span{border:1px solid #2b3542;border-radius:6px;padding:6px 8px;font:10px 'DM Mono',monospace;color:#9ba8b8}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0}.metric{background:#0c1118;border:1px solid #26303b;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}.metric small{font-size:10px;color:#8491a2}.metric strong{font:700 22px Manrope;color:#eaf0f7;overflow-wrap:anywhere}.metric span{font-size:9px;color:#6f7c8d}.reviewer-results{display:grid;gap:10px;margin-top:18px}.reviewer-result{border:1px solid #2b3542;border-radius:9px;padding:13px}.reviewer-result-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.reviewer-result-head div{display:flex;flex-direction:column;gap:4px}.reviewer-result-head strong{font-size:12px;text-transform:capitalize}.reviewer-result-head small{font-size:10px;color:#8190a2}.status{font:9px 'DM Mono',monospace;letter-spacing:.5px}.status.ok{color:#a7f36c}.status.warn{color:#f2c078}.metric-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:12px}.metric-row .metric{padding:9px}.metric-row .metric strong{font-size:17px}.note{font-size:10px;color:#8795a7;line-height:1.6}details{margin-top:12px;border-top:1px solid #28313d;padding-top:10px}summary{font-size:11px;color:#b4c0cf;cursor:pointer}.findings-list{display:grid;gap:8px;margin-top:12px}.finding{display:flex;align-items:flex-start;gap:10px;padding:9px;background:#0c1118;border-radius:7px}.category{font:9px 'DM Mono',monospace;color:#a7f36c;border:1px solid #3b5730;padding:4px 5px;border-radius:4px}.finding strong{font-size:10px}.finding p{font-size:10px;line-height:1.5;color:#91a0b1;margin:4px 0 0}.export-link{display:inline-block;color:#a7f36c;font-size:11px;text-decoration:none;margin-top:14px}.history-panel{margin-top:18px}.history-list{display:grid;margin-top:15px}.history-item{display:flex;align-items:center;gap:13px;text-align:left;background:transparent;border:0;border-top:1px solid #28313d;padding:13px 2px;color:#e7edf5;cursor:pointer}.history-id{font:11px 'DM Mono',monospace;color:#a7f36c}.history-main{display:flex;flex:1;flex-direction:column;gap:4px}.history-main strong{font-size:11px}.history-main small{font-size:10px;color:#7d8b9c}.history-arrow{color:#7f8c9d}.error-banner{border:1px solid #8d4b4b;background:#2a171a;color:#ffc1c1;padding:12px;border-radius:8px;font-size:12px;margin-bottom:15px}footer{display:flex;justify-content:space-between;gap:20px;padding:25px 2px 0;color:#667486;font-size:10px}footer span:first-child{color:#a7f36c;font-family:Manrope;font-weight:700}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.setup-panel{order:1}.results-column{order:2}.hero{padding-top:48px}.hero h1{letter-spacing:-2px}.shell{padding:0 17px 24px}}
+@media(max-width:520px){.panel{padding:16px}.metric-grid{grid-template-columns:1fr}.metric-row{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-tags span{font-size:10px}.top-pill{font-size:10px}.brand-copy strong{font-size:15px}footer{flex-direction:column;gap:7px}}
+
+/* Code Review Panel improvements */
+.code-review-editor {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #293543;
+  border-radius: 10px;
+  background: #0b1017;
+  color: #e6edf5;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.code-review-editor:focus {
+  outline: 2px solid #a4f36b;
+  outline-offset: 2px;
+}
+
+.code-review-label {
+  display: block;
+  margin: 16px 0 8px;
+  color: #dce4ed;
+  font-weight: 600;
+}
+
+.code-review-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.code-review-results .metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.code-review-results .metric {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.code-review-results .metric strong {
+  font-size: clamp(18px, 2vw, 26px);
+}
+
+.code-review-issue-list {
+  padding-left: 20px;
+}
+
+.code-review-issue-list li {
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .code-review-results .metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fix-suggestion {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-left: 3px solid #a4f36b;
+  border-radius: 0 8px 8px 0;
+  background: rgba(164, 243, 107, 0.07);
+  color: #c9d5e3;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.fix-suggestion strong {
+  color: #a4f36b;
+}
+/* Code review severity badges */
+.severity-badge {
+  display: inline-block;
+  width: fit-content;
+  margin: 8px 0;
+  padding: 4px 10px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.severity-error {
+  color: #ff7b72;
+  background: rgba(255, 123, 114, 0.1);
+  border-color: rgba(255, 123, 114, 0.4);
+}
+
+.severity-warning {
+  color: #f2cc60;
+  background: rgba(242, 204, 96, 0.1);
+  border-color: rgba(242, 204, 96, 0.4);
+}
+
+.severity-style {
+  color: #79c0ff;
+  background: rgba(121, 192, 255, 0.1);
+  border-color: rgba(121, 192, 255, 0.4);
+}
+
+.severity-critical,
+.severity-high {
+  color: #ff7b72;
+  background: rgba(255, 123, 114, 0.1);
+  border-color: rgba(255, 123, 114, 0.4);
+}
+
+.severity-medium {
+  color: #f2cc60;
+  background: rgba(242, 204, 96, 0.1);
+  border-color: rgba(242, 204, 96, 0.4);
+}
+
+.severity-low,
+.severity-info {
+  color: #79c0ff;
+  background: rgba(121, 192, 255, 0.1);
+  border-color: rgba(121, 192, 255, 0.4);
+}
+
+/* ReviewSignal AI — compact dashboard layout */
+
+.shell {
+  max-width: 1600px;
+  padding: 0 24px 24px;
+}
+
+.hero {
+  max-width: none;
+  padding: 26px 0 20px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 3.5vw, 46px);
+  letter-spacing: -1.8px;
+}
+
+.hero-copy {
+  max-width: 800px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.hero .eyebrow {
+  margin-bottom: 9px;
+}
+
+.hero-tags span {
+  padding: 6px 9px;
+}
+
+/* Main workspace: Code Review and Experiment Setup side by side */
+.layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.layout > .code-review-panel,
+.layout > .setup-panel {
+  min-width: 0;
+  height: 100%;
+}
+
+.layout > .results-column {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.panel {
+  padding: 18px;
+}
+
+.results-panel {
+  min-height: 0;
+}
+
+/* Keep metric values on one line whenever possible */
+.metric strong {
+  font-size: clamp(17px, 1.6vw, 23px);
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.metric-grid {
+  gap: 10px;
+}
+
+/* Compact experiment history */
+.history-panel {
+  margin-top: 16px;
+}
+
+.history-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+}
+
+.history-item {
+  min-width: 0;
+}
+
+.history-main {
+  min-width: 0;
+}
+
+.history-main strong,
+.history-main small {
+  overflow-wrap: anywhere;
+}
+
+/* Keep the dashboard responsive */
+@media (max-width: 900px) {
+  .shell {
+    padding-inline: 16px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .layout > .results-column {
+    grid-column: auto;
+  }
+
+  .history-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .panel {
+    padding: 14px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric strong {
+    font-size: 18px;
+  }
+
+  .code-review-results .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  footer {
+    padding-top: 18px;
+  }
+}
+
+/* Scrollable Experiment Setup panel */
+
+.setup-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Keep the panel heading and Run button accessible */
+.setup-panel h2,
+.setup-panel > p,
+.setup-panel > .section-heading,
+.setup-panel > button {
+  flex-shrink: 0;
+}
+
+/* Scroll only through the experiment options */
+.setup-panel .reviewer-list {
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  overscroll-behavior: contain;
+}
+
+/* Keep the scrollbar neat */
+.setup-panel .reviewer-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.setup-panel .reviewer-list::-webkit-scrollbar-thumb {
+  background: #414b46;
+  border-radius: 8px;
+}
+
+.setup-panel .reviewer-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Experiment Setup: contained, independently scrollable reviewer list */
+.setup-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Scroll only the reviewer choices */
+.setup-panel .reviewer-list {
+  max-height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 8px 4px 0;
+  margin: 8px 0 14px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #46534c transparent;
+}
+
+/* Chrome, Safari and Edge scrollbar */
+.setup-panel .reviewer-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.setup-panel .reviewer-list::-webkit-scrollbar-thumb {
+  background: #46534c;
+  border-radius: 8px;
+}
+
+.setup-panel .reviewer-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Keep actions and dataset information outside the scroll area */
+.setup-panel > .primary-button,
+.setup-panel > .footnote,
+.setup-panel > .dataset-box {
+  flex-shrink: 0;
+}
+
+/* Keep reviewer options readable */
+.setup-panel .reviewer-option {
+  min-width: 0;
+}
+
+.setup-panel .option-copy {
+  min-width: 0;
+}
+
+.setup-panel .option-copy small {
+  overflow-wrap: anywhere;
+}
+
+
+/* Dashboard KPI summary */
+.dashboard-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.dashboard-kpis .metric {
+  min-height: 104px;
+  justify-content: center;
+  padding: 16px 18px;
+  background: linear-gradient(145deg, #151d26, #10151d);
+  border-color: #2a3542;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.dashboard-kpis .metric:hover {
+  border-color: #506448;
+  transform: translateY(-2px);
+}
+
+.dashboard-kpis .metric small {
+  font-size: 11px;
+  letter-spacing: 0.2px;
+}
+
+.dashboard-kpis .metric strong {
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -0.8px;
+}
+
+.dashboard-kpis .metric span {
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .dashboard-kpis {
+    gap: 8px;
+  }
+
+  .dashboard-kpis .metric {
+    min-height: 96px;
+    padding: 12px;
+  }
+}
+
+/* Refined experiment history */
+
+.history-panel {
+  margin-top: 18px;
+  padding: 22px;
+}
+
+.history-panel .section-head {
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.history-panel .section-head .muted {
+  margin: 8px 0 0;
+}
+
+.history-count {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border: 1px solid #303b48;
+  border-radius: 8px;
+  color: #a7f36c;
+  background: #141c19;
+  font: 11px 'DM Mono', monospace;
+}
+
+.history-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 0;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 15px 13px;
+  border: 1px solid #283340;
+  border-radius: 10px;
+  background: #10161e;
+  text-align: left;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.history-item:hover {
+  border-color: #60794e;
+  background: #151e20;
+}
+
+.history-item.active {
+  border-color: #83bb5b;
+  background: #172219;
+  box-shadow: inset 3px 0 #a7f36c;
+}
+
+.history-id {
+  flex-shrink: 0;
+  min-width: 34px;
+  color: #a7f36c;
+  font: 12px 'DM Mono', monospace;
+}
+
+.history-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.history-main strong {
+  overflow-wrap: anywhere;
+  color: #e9edf5;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.history-main small {
+  overflow-wrap: anywhere;
+  color: #8492a4;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.history-status {
+  flex-shrink: 0;
+  padding: 5px 7px;
+  border-radius: 5px;
+  font: 9px 'DM Mono', monospace;
+  text-transform: uppercase;
+}
+
+.history-status.completed {
+  color: #a7f36c;
+  background: rgba(167, 243, 108, 0.09);
+}
+
+.history-status.other {
+  color: #e7c28c;
+  background: rgba(231, 194, 140, 0.09);
+}
+
+.history-arrow {
+  flex-shrink: 0;
+  color: #8190a2;
+}
+
+.history-toggle {
+  display: block;
+  margin: 16px auto 0;
+  padding: 10px 14px;
+  border: 1px solid #303b48;
+  border-radius: 8px;
+  background: transparent;
+  color: #a7f36c;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.history-toggle:hover {
+  border-color: #83bb5b;
+  background: rgba(167, 243, 108, 0.06);
+}
+
+.history-empty {
+  padding: 24px 0;
+  color: #e9edf5;
+}
+
+.history-empty p {
+  color: #8492a4;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .history-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .history-panel {
+    padding: 15px;
+  }
+
+  .history-item {
+    gap: 8px;
+    padding: 12px 9px;
+  }
+
+  .history-status {
+    font-size: 8px;
+  }
+}
+
+/* Reviewer comparison analytics */
+
+.comparison-panel {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #283440;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #111821, #0d131a);
+}
+
+.comparison-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.comparison-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.comparison-heading h3 {
+  margin: 0;
+  color: #e9edf5;
+  font: 700 17px Manrope, sans-serif;
+  letter-spacing: -0.4px;
+}
+
+.comparison-heading .muted {
+  margin: 8px 0 0;
+}
+
+.comparison-unit {
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border: 1px solid #303b48;
+  border-radius: 6px;
+  color: #9aa8b9;
+  font: 10px 'DM Mono', monospace;
+}
+
+.comparison-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.comparison-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #a5b1c0;
+  font-size: 10px;
+}
+
+.comparison-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+}
+
+.legend-precision {
+  background: #a7f36c;
+}
+
+.legend-recall {
+  background: #70b8ff;
+}
+
+.legend-f1 {
+  background: #c4a0ff;
+}
+
+.comparison-chart {
+  display: grid;
+  gap: 18px;
+}
+
+.comparison-reviewer {
+  display: grid;
+  gap: 11px;
+  min-width: 0;
+}
+
+.comparison-reviewer-name {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #25303b;
+}
+
+.comparison-reviewer-name strong {
+  color: #e9edf5;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) 55px;
+  align-items: center;
+  gap: 12px;
+}
+
+.comparison-label {
+  color: #8d9bad;
+  font-size: 10px;
+}
+
+.comparison-track {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #242d38;
+}
+
+.comparison-fill {
+  height: 100%;
+  min-width: 0;
+  border-radius: inherit;
+  transition: width 300ms ease;
+}
+
+.comparison-fill.precision {
+  background: #a7f36c;
+}
+
+.comparison-fill.recall {
+  background: #70b8ff;
+}
+
+.comparison-fill.f1 {
+  background: #c4a0ff;
+}
+
+.comparison-value {
+  color: #e9edf5;
+  text-align: right;
+  font: 11px 'DM Mono', monospace;
+}
+
+.comparison-footnote {
+  margin: 18px 0 0;
+  color: #718094;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 520px) {
+  .comparison-panel {
+    padding: 14px;
+  }
+
+  .comparison-row {
+    grid-template-columns: 64px minmax(0, 1fr) 48px;
+    gap: 8px;
+  }
+
+  .comparison-heading h3 {
+    font-size: 15px;
+  }
+}
+
+/* Scrollable Experiment Setup panel */
+
+.setup-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Keep the panel heading and Run button accessible */
+.setup-panel h2,
+.setup-panel > p,
+.setup-panel > .section-heading,
+.setup-panel > button {
+  flex-shrink: 0;
+}
+
+/* Scroll only through the experiment options */
+.setup-panel .reviewer-list {
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  overscroll-behavior: contain;
+}
+
+/* Keep the scrollbar neat */
+.setup-panel .reviewer-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.setup-panel .reviewer-list::-webkit-scrollbar-thumb {
+  background: #414b46;
+  border-radius: 8px;
+}
+
+.setup-panel .reviewer-list::-webkit-scrollbar-track {
+  background: transparent;
+}

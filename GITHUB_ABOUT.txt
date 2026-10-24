@@ -1,0 +1,1 @@
+A reproducible Python platform for evaluating code-review methods against a small controlled dataset, with FastAPI, Ruff, Bandit, optional LLM review, and precision/recall metrics.

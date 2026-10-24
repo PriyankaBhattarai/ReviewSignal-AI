@@ -1,0 +1,16 @@
+services:
+  reviewsignal-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////data/reviewsignal.db
+      LLM_PROVIDER: ${LLM_PROVIDER:-mock}
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_MODEL: ${LLM_MODEL:-YOUR_MODEL_NAME}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      CORS_ORIGINS: http://localhost:5173
+    volumes:
+      - reviewsignal-data:/data
+volumes:
+  reviewsignal-data:
