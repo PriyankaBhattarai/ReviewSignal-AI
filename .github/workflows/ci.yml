@@ -15,7 +15,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install backend dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txt ruff bandit
 
       - name: Run backend tests
         run: python -m pytest -v
