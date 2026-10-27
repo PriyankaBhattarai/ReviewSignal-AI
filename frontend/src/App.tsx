@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import CodeReviewPanel from './CodeReviewPanel'
+import { apiUrl } from './api'
 
 type Metrics = {
   true_positives: number; false_positives: number; false_negatives: number; true_negatives: number
@@ -39,13 +40,13 @@ export default function App() {
 
   async function loadHistory() {
     try {
-      const response = await fetch('/api/experiments')
+      const response = await fetch(apiUrl('/api/experiments'))
       if (response.ok) setHistory(await response.json())
     } catch { /* API may not be running yet */ }
   }
 
   useEffect(() => {
-    fetch('/api/dataset').then(r => r.json()).then(setDataset).catch(() => setError('Backend unavailable. Start FastAPI on port 8000.'))
+    fetch(apiUrl('/api/dataset')).then(r => r.json()).then(setDataset).catch(() => setError('Backend unavailable. Start FastAPI on port 8000.'))
     loadHistory()
   }, [])
 
@@ -57,7 +58,7 @@ export default function App() {
   async function runExperiment() {
     setBusy(true); setError('')
     try {
-      const response = await fetch('/api/experiments', {
+      const response = await fetch(apiUrl('/api/experiments'), {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reviewers: selected }),
       })
@@ -72,7 +73,7 @@ export default function App() {
 
   async function openHistory(id: number) {
     try {
-      const response = await fetch(`/api/experiments/${id}`)
+      const response = await fetch(apiUrl(`/api/experiments/${id}`))
       if (!response.ok) throw new Error('Could not load experiment.')
       setExperiment(await response.json())
     } catch (err) { setError(err instanceof Error ? err.message : 'Unable to load experiment.') }
@@ -270,7 +271,7 @@ export default function App() {
                   </article>
                 ))}
               </div>
-              <a className="export-link" href={`/api/experiments/${experiment.id}/export`} target="_blank" rel="noreferrer">Export experiment JSON ↗</a>
+              <a className="export-link" href={apiUrl(`/api/experiments/${experiment.id}/export`)} target="_blank" rel="noreferrer">Export experiment JSON ↗</a>
               <p className="footnote">Metrics apply only to this small dataset and its category-matching rules. They are not a general claim about AI reviewer accuracy.</p>
             </>}
           </div>

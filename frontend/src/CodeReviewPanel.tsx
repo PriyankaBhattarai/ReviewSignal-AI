@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import './styles.css'
+import { apiUrl } from './api'
 
 type ReviewIssue = {
   code?: string
@@ -95,7 +96,7 @@ export default function CodeReviewPanel() {
     setResult(null)
 
     try {
-      const response = await fetch('/api/code-review', {
+      const response = await fetch(apiUrl('/api/code-review'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
