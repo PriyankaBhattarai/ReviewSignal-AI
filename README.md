@@ -1,6 +1,6 @@
 # ReviewSignal AI — Code Review Reliability Evaluation Platform
 
-ReviewSignal AI is a portfolio project that evaluates how reliably code-review methods identify known issues in Python snippets. It compares deterministic static-analysis tools (Ruff and Bandit, when installed) with an LLM reviewer, then calculates transparent evaluation metrics against a small, version-controlled benchmark dataset.
+ReviewSignal AI is a project that evaluates how reliably code-review methods identify known issues in Python snippets. It compares deterministic static-analysis tools (Ruff and Bandit, when installed) with an LLM reviewer, then calculates transparent evaluation metrics against a small, version-controlled benchmark dataset.
 
 > **Project status:** MVP scaffold. The deterministic evaluator and mock reviewer are designed to work without paid API credentials. LLM provider results depend on configuration. Benchmark results are only meaningful for the included dataset and matching rules; do not generalize them to all code or models.
 
